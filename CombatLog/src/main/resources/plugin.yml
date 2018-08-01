@@ -1,0 +1,16 @@
+main: com.gmail.trubatpig.CombatLog.CombatLog
+name: SimpleCombatTag
+version: 1
+author: Henry aka trubat
+permissions:
+  combattag.bypass:
+    description: Anyone with this permission will be ignored in the plugin.
+    default: op
+  combattag.commandbypass:
+    description: Anyone with this permission will not be affected by command blacklist during combat.
+    default: op
+commands:
+  sctreload:
+    description: Reloads from the config file.
+    permission: combattag.reload
+    

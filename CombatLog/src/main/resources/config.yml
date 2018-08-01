@@ -1,0 +1,62 @@
+# Combat Log by trubat
+
+# Permissions:
+#     combattag.bypass (the plugin will ignore whoever has this permission)
+#     combattag.commandbypass (the person with this permission will be able to bypass any command blacklist during combat)
+#     combattag.reload (Permission for /sctreload command)
+
+
+# - General -
+
+# Combat tag length (in seconds).             
+
+tagDuration: 10
+
+# Command tag length (in seconds) - Change this value if you want commands disabled for a different duration than the normal tag duration
+
+commandDisableDuration: 10
+
+# Enable command whitelist (This will disable all commands during combat by default. Disable this and the blacklist if you don't want any commands disabled)
+
+enableWhitelist: true
+
+# Whitelisted commands (Players will be able to perform these in combat if the whitelist is enabled. Include the "/")
+
+whitelist:
+  - "/example command"
+  
+# Enable command blacklist (This will enable all commands during combat by default. Disable this and the whitelist if you don't want any commands disabled)
+
+enableBlacklist: false
+
+# Blacklisted commands (Players will not be able to perform these in combat if the blacklist is enabled. Include the "/")
+
+blacklist:
+  - "/example command"
+  
+  
+  
+# - Chat -
+
+# Notifies the player when they enter combat.
+
+combatTaggedMessage: "&cYou are now in combat. Don't log out!"
+
+# Notifies the player when they leave combat.
+
+combatExitMessage: "&7You are no longer in combat"
+
+# Notifies the player when they can use commands. This message will only show if the command duration is different from the regular tag duration
+
+commandTagExitMessage: "&7You can now perform commands"
+
+# Broadcasts when a player logs while in combat. PLAYER will be replaced by the player and TARGET will be replaced by the last player they were engaged with.
+
+combatLogBroadcast: "&4PLAYER &chas logged out during combat while fighting &4TARGET"
+
+# Notifies the player when they can't perform a command
+
+commandFailMessage: "&cYou can't use that command in combat"
+
+
+ 
