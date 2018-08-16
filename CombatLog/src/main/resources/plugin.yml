@@ -1,6 +1,6 @@
 main: com.gmail.trubatpig.CombatLog.CombatLog
 name: SimpleCombatTag
-version: 1
+version: 1.1
 author: Henry aka trubat
 permissions:
   combattag.bypass:

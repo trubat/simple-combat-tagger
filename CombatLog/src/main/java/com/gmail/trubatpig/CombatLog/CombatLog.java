@@ -11,6 +11,8 @@ import org.bukkit.entity.Projectile;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.entity.EntityDamageEvent.DamageCause;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
@@ -102,7 +104,17 @@ public class CombatLog extends JavaPlugin implements Listener
 		return false;
 	}
 	@EventHandler
-	public void onPlayerCombat(EntityDamageByEntityEvent event)
+	public void onPlayerCombat(final EntityDamageByEntityEvent event)
+	{
+		new BukkitRunnable()
+		{
+			public void run()
+			{
+				if(!event.isCancelled()) generateTag(event);
+			}
+		}.runTaskLater(this, 1);
+	}
+	private void generateTag(EntityDamageByEntityEvent event)
 	{
 		if((event.getDamager() instanceof Player || event.getDamager() instanceof Projectile) && event.getEntity() instanceof Player
 				&& !event.isCancelled())
